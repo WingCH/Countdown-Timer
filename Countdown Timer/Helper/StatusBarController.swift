@@ -18,7 +18,7 @@ class StatusBarController {
         self.popover = popover
         statusBar = NSStatusBar.init()
         // Creating a status bar item having a fixed length
-        statusItem = statusBar.statusItem(withLength: 28.0)
+        statusItem = statusBar.statusItem(withLength: NSStatusItem.variableLength)
         
         if let statusBarButton = statusItem.button {
             statusBarButton.image = #imageLiteral(resourceName: "countdown")
@@ -27,7 +27,9 @@ class StatusBarController {
             
             statusBarButton.action = #selector(togglePopover(sender:))
             statusBarButton.target = self
+//            statusBarButton.title = "text"
         }
+        
         
         eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown], handler: mouseEventHandler)
     }

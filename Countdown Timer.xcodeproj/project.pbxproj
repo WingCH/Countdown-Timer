@@ -103,9 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				0ED8EF972532F28A00913B7A /* AppDelegate.swift */,
-				0ED8EF992532F28A00913B7A /* ContentView.swift */,
-				0ED8EFC92532F93900913B7A /* StatusBarController.swift */,
-				0ED8EFD1253304B200913B7A /* EventMonitor.swift */,
+				0ED8EFE7253314E400913B7A /* Helper */,
+				0ED8EFE8253314F900913B7A /* View */,
 				0ED8EF9B2532F28C00913B7A /* Assets.xcassets */,
 				0ED8EFA02532F28C00913B7A /* Main.storyboard */,
 				0ED8EFA32532F28C00913B7A /* Info.plist */,
@@ -139,6 +138,23 @@
 				0ED8EFBA2532F28C00913B7A /* Info.plist */,
 			);
 			path = "Countdown TimerUITests";
+			sourceTree = "<group>";
+		};
+		0ED8EFE7253314E400913B7A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				0ED8EFC92532F93900913B7A /* StatusBarController.swift */,
+				0ED8EFD1253304B200913B7A /* EventMonitor.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		0ED8EFE8253314F900913B7A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0ED8EF992532F28A00913B7A /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
