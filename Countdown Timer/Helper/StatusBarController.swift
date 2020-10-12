@@ -19,15 +19,28 @@ class StatusBarController {
         statusBar = NSStatusBar.init()
         // Creating a status bar item having a fixed length
         statusItem = statusBar.statusItem(withLength: NSStatusItem.variableLength)
-        
         if let statusBarButton = statusItem.button {
-            statusBarButton.image = #imageLiteral(resourceName: "countdown")
-            statusBarButton.image?.size = NSSize(width: 18.0, height: 18.0)
-            statusBarButton.image?.isTemplate = true
-            
+
             statusBarButton.action = #selector(togglePopover(sender:))
             statusBarButton.target = self
-//            statusBarButton.title = "text"
+            
+            // create an NSMutableAttributedString that we'll append everything to
+            let fullString = NSMutableAttributedString(string: "Start of text")
+
+            // create our NSTextAttachment
+            let image1Attachment = NSTextAttachment()
+            image1Attachment.image = #imageLiteral(resourceName: "countdown")
+            image1Attachment.bounds = CGRect(x: 0, y: 0, width: 15, height: 15)
+
+            // wrap the attachment in its own attributed string so we can append it
+            let image1String = NSAttributedString(attachment: image1Attachment)
+
+            // add the NSTextAttachment wrapper to our full string, then add some more text.
+            fullString.append(image1String)
+            fullString.append(NSAttributedString(string: "End of text"))
+
+            
+            statusBarButton.attributedTitle =  fullString
         }
         
         
